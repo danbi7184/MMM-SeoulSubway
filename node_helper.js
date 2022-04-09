@@ -18,11 +18,12 @@ module.exports = NodeHelper.create({
 
     getData: async function (payload) {
 				let self = this;
-				var queryParams = "/" + payload.config.key +
-                          "/xml/realtimeStationArrival" +
-                          "/" + payload.config.start_index +
-                          "/" + payload.config.end_index +
-                          "/" + encodeURIComponent(payload.config.statnNm);
+				var queryParams = '/' + payload.config.key +
+                          '/' + encodeURIComponent("xml") +
+                          '/' + encodeURIComponent("realtimeStationArrival") +
+                          '/' + payload.config.start_index +
+                          '/' + payload.config.end_index +
+                          '/' + encodeURIComponent(payload.config.statnNm);
 				var url = payload.config.Sample + queryParams;
         request({
             url: url,
