@@ -22,7 +22,7 @@ module.exports = NodeHelper.create({
                           "/xml/realtimeStationArrival" +
                           "/" + payload.config.start_index +
                           "/" + payload.config.end_index +
-                          "/" + payload.config.statnNm;
+                          "/" + encodeURIComponent(payload.config.statnNm);
 				var url = payload.config.Sample + queryParams;
         request({
             url: url,
