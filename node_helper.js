@@ -19,7 +19,7 @@ module.exports = NodeHelper.create({
     getData: async function (payload) {
 				let self = this;
 				var queryParams = "/" + payload.config.key;
-				queryParams += "/xml/realtimeStationArrival"
+				queryParams += "/json/realtimeStationArrival"
 				queryParams += "/" + payload.config.start_index;
 				queryParams += "/" + payload.config.end_index;
 				queryParams += "/" + payload.config.statnNm;
@@ -29,11 +29,11 @@ module.exports = NodeHelper.create({
             method: 'GET'
         }, function (error, response, body) {
             if(!error && (response && response.statusCode) == 200){
-                var result = convert.xml2json(body, { compact: true, spaces: 4 });
+                var result = body
                 var data = JSON.parse(result).response
-                if(data.hasOwnProperty("msgBody") && Array.isArray(data.msgBody.row)) {
-                    var row = data.msgBody.row;
-                    self.sendSocketNotification("SUBWAY_DATA", row);
+                if(data.hasOwnProperty("msgBody") && Array.isArray(data.msgBody.realtimeArrivalList)) {
+                    var row = data.msgBody.realtimeArrivalList;
+                    self.sendSocketNotification("SUBWAY_DATA", realtimeArrivalList);
                 } else {
                     self.sendSocketNotification("SUBWAY_DATA_ERROR", data);
                 }
