@@ -27,14 +27,13 @@ module.exports = NodeHelper.create({
             url: url,
             method: 'GET',
         }, function (error, response, body) {
-            if(!error & (response && response.statusCode) === 200){
+            if(!error){
                 var data = JSON.parse(body);
                 if(data.hasOwnProperty("realtimeArrivalList")) {
                     var realtimeArrivalList = data.realtimeArrivalList;
                     self.sendSocketNotification("SUBWAY_DATA", realtimeArrivalList);
                 } else {
                     self.sendSocketNotification("SUBWAY_DATA_ERROR", data);
-                    console.log("Subway_DATA_ERROR");
                 }
             }
         });
