@@ -30,9 +30,9 @@ module.exports = NodeHelper.create({
         }, function (error, response, body) {
             if(!error & (response && response.statusCode) === 200){
                 var result = convert.xml2json(body, { compact: true, spaces: 4 });
-                var data = JSON.parse(result).response;
-                if(data.hasOwnProperty("realtimeStationArrival") && Array.isArray(data.realtimeStationArrival.row)) {
-                    var realtimeArrivalList = data.realtimeStationArrival.row;
+                var data = JSON.parse(result).realtimeStationArrival;
+                if(data.hasOwnProperty("row")) {
+                    var realtimeArrivalList = data.row;
                     self.sendSocketNotification("SUBWAY_DATA", realtimeArrivalList);
                 } else {
                     self.sendSocketNotification("SUBWAY_DATA_ERROR", data);
