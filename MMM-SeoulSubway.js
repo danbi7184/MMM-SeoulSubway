@@ -44,10 +44,10 @@ Module.register("MMM-SeoulSubway", {
                     subwayTable.appendChild(row);
 
 										// 도착지 방면 (성수행-구로디지털단지방향)
-										var trainLineNm = document.createElement("td");
-										trainLineNm.className = "trainLine";
-										trainLineNm.innerHTML = subway.trainLineNm._text;
-										row.appendChild(trainLineNm);
+										//var trainLineNm = document.createElement("td");
+										//trainLineNm.className = "trainLine";
+										//trainLineNm.innerHTML = subway.trainLineNm._text;
+										//row.appendChild(trainLineNm);
 
 										// 상하행선 구분
 										var updnLine = document.createElement("td");
