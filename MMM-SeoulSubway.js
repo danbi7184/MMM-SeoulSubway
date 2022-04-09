@@ -11,7 +11,7 @@ Module.register("MMM-SeoulSubway", {
     },
 
     getStyles: function() {
-        return ["MMM-SeoulSubway.css"]
+        return ["MMM-SeoulSubway.css"];
     },
 
     getHeader: function() {
@@ -24,7 +24,7 @@ Module.register("MMM-SeoulSubway", {
     start: function() {
         Log.info("Starting module: " + this.name);
         this.subwayInfo = [];
-        var self = this
+        var self = this;
         this.loaded = false;
     },
 
@@ -73,7 +73,7 @@ Module.register("MMM-SeoulSubway", {
                 "config": this.config,
                 "identifier": this.identifier
             }
-        )
+        );
     },
 
 	notificationReceived: function(notification, payload, sender){
