@@ -31,8 +31,8 @@ module.exports = NodeHelper.create({
             if(!error && (response && response.statusCode) == 200){
                 var result = body;
                 var data = JSON.parse(result).response;
-                if(data.hasOwnProperty("msgBody") && Array.isArray(data.msgBody.realtimeArrivalList)) {
-                    var realtimeArrivalList = data.msgBody.realtimeArrivalList;
+                if(data.hasOwnProperty("realtimeArrivalList") {
+                    var realtimeArrivalList = data.realtimeArrivalList;
                     self.sendSocketNotification("SUBWAY_DATA", realtimeArrivalList);
                 } else {
                     self.sendSocketNotification("SUBWAY_DATA_ERROR", data);
