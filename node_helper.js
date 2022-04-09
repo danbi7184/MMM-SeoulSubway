@@ -1,5 +1,4 @@
 const NodeHelper = require("node_helper");
-const convert = require('xml-js');
 const request = require('request');
 
 module.exports = NodeHelper.create({
@@ -18,16 +17,16 @@ module.exports = NodeHelper.create({
 
     getData: async function (payload) {
 				let self = this;
-				/*var queryParams = "/" + payload.config.key +
+				var queryParams = "/" + payload.config.key +
                           "/json/realtimeStationArrival" +
                           "/" + payload.config.start_index +
                           "/" + payload.config.end_index +
                           "/" + payload.config.statnNm;
-				var url = payload.config.Sample + queryParams;*/
-        var url ="http://swopenapi.seoul.go.kr/api/subway/61645a586764616e36364151526e66/json/realtimeStationArrival/0/1/사당"
+				var url = payload.config.Sample + queryParams;
         request({
             url: url,
-            method: 'GET'
+            method: 'GET',
+            json: true
         }, function (error, response, body) {
             if(!error & (response && response.statusCode) === 200){
                 var data = JSON.parse(body);
