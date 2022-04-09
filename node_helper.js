@@ -32,7 +32,7 @@ module.exports = NodeHelper.create({
                 var result = body;
                 var data = JSON.parse(result).response;
                 if(data.hasOwnProperty("msgBody") && Array.isArray(data.msgBody.realtimeArrivalList)) {
-                    var row = data.msgBody.realtimeArrivalList;
+                    var realtimeArrivalList = data.msgBody.realtimeArrivalList;
                     self.sendSocketNotification("SUBWAY_DATA", realtimeArrivalList);
                 } else {
                     self.sendSocketNotification("SUBWAY_DATA_ERROR", data);
