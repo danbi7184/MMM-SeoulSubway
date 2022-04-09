@@ -27,7 +27,7 @@ module.exports = NodeHelper.create({
             url: url,
             method: 'GET',
         }, function (error, response, body) {
-            if(!error){
+            if(!error & (response && response.statusCode) === 200){
                 var data = JSON.parse(body);
                 if(data.hasOwnProperty("realtimeArrivalList")) {
                     var realtimeArrivalList = data.realtimeArrivalList;

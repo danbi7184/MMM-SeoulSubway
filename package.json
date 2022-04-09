@@ -21,6 +21,8 @@
   "homepage": "https://github.com/danbi7184/MMM-SeoulSubway#readme",
   "dependencies": {
     "nodehelper": "^0.0.12",
+    "notification": "^0.0.6",
+    "payload": "^0.15.6",
     "request": "^2.88.2"
   }
 }
