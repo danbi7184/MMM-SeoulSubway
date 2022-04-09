@@ -26,7 +26,6 @@ module.exports = NodeHelper.create({
         request({
             url: url,
             method: 'GET',
-            json: true
         }, function (error, response, body) {
             if(!error & (response && response.statusCode) === 200){
                 var data = JSON.parse(body);

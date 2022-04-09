@@ -4,7 +4,7 @@
   "description": "seoul subway information for magic mirror",
   "main": "MMM-SeoulSubway.js",
   "scripts": {
-    "test": "console.log(\"This is a test\")"
+    "test": "console.log(\"This is a test\");"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/danbi7184/MMM-SeoulSubway/issues"
   },
-  "homepage": "https://github.com/danbi7184/MMM-SeoulSubway#readme"
+  "homepage": "https://github.com/danbi7184/MMM-SeoulSubway#readme",
+  "dependencies": {
+    "nodehelper": "^0.0.12",
+    "request": "^2.88.2"
+  }
 }
