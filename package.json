@@ -1,0 +1,26 @@
+{
+  "name": "mmm-seoulsubway",
+  "version": "1.0.0",
+  "description": "Seoul Subway for MagicMirror",
+  "main": "MMM-SeoulSubway.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danbi7184/MMM-SeoulSubway.git"
+  },
+  "keywords": [
+    "MagicMirror"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/danbi7184/MMM-SeoulSubway.git"
+  },
+  "homepage": "https://github.com/danbi7184/MMM-SeoulSubway.git",
+  "dependencies": {
+    "request": "^2.88.2",
+    "xml-js": "^1.6.11"
+  }
+}
