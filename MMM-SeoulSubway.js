@@ -31,10 +31,8 @@ Module.register("MMM-SeoulSubway", {
 	getDom: function() {
 		var wrapper = document.createElement("div");
         if (!this.loaded) {
-			wrapper.innerHTML = "Loading 1";
             return wrapper;
         }
-        wrapper.innerHTML = "Loading 2";
         var subwayTable = document.createElement("table");
         subwayTable.className = "small";
         if(this.subwayInfo.length > 0) {
