@@ -4,7 +4,7 @@
   "description": "seoul subway information for magic mirror",
   "main": "MMM-SeoulSubway.js",
   "scripts": {
-    "test": "console.log(\"This is a test\");"
+    "test": "console.log(\"This is a test\")"
   },
   "repository": {
     "type": "git",

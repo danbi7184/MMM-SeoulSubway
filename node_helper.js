@@ -34,6 +34,7 @@ module.exports = NodeHelper.create({
                     self.sendSocketNotification("SUBWAY_DATA", realtimeArrivalList);
                 } else {
                     self.sendSocketNotification("SUBWAY_DATA_ERROR", data);
+                    console.log("Subway_DATA_ERROR");
                 }
             }
         });
