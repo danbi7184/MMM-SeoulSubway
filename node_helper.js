@@ -28,10 +28,9 @@ module.exports = NodeHelper.create({
             url: url,
             method: 'GET'
         }, function (error, response, body) {
-            if(!error && (response || response.statusCode) == 200){
-                var result = body;
-                var data = JSON.parse(result).response;
-                if(data.hasOwnProperty("realtimeArrivalList") {
+            if(!error & response == 200){
+                var data = JSON.parse(body).response;
+                if(data.hasOwnProperty("realtimeArrivalList")) {
                     var realtimeArrivalList = data.realtimeArrivalList;
                     self.sendSocketNotification("SUBWAY_DATA", realtimeArrivalList);
                 } else {
