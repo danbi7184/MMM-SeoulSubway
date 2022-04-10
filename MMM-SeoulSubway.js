@@ -1,10 +1,10 @@
 Module.register("MMM-SeoulSubway", {
     requiresVersion: "2.12.0",
     default: {
-			Sample: "http://swopenapi.seoul.go.kr/api/subway",
+			sample: "http://swopenapi.seoul.go.kr/api/subway",
 			key: "",
-			start_index: 0,
-			end_index: 1,
+			startIndex: 0,
+			endIndex: 1,
 			statnNm: "사당",
 			header: "사당역 지하철 도착 정보",
 			updateInterval: 60000,
