@@ -24,7 +24,6 @@ Module.register("MMM-SeoulSubway", {
     start: function() {
         Log.info("Starting module: " + this.name);
         this.subwayInfo = [];
-        var self = this;
         this.loaded = false;
     },
 
