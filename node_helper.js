@@ -25,13 +25,11 @@ module.exports = NodeHelper.create({
       "/" + payload.config.endIndex +
       "/" + encodeURIComponent(payload.config.statnNm);
     var url = payload.config.sample + queryParams;
-    request(
-      {
+    request({
         url: url,
         method: "GET",
-      },
-      function (error, response, body) {
-        if (!error && (response && response.statusCode) === 200) {
+      }, function (error, response, body) {
+        if (!error) {
           var result = convert.xml2json(body, { compact: true, spaces: 4 });
           var data = JSON.parse(result).realtimeStationArrival;
           if (data.hasOwnProperty("row")) {
@@ -41,7 +39,6 @@ module.exports = NodeHelper.create({
             self.sendSocketNotification("SUBWAY_DATA_ERROR", data);
           }
         }
-      }
-    );
+      });
   },
 });
