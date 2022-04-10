@@ -19,8 +19,7 @@ module.exports = NodeHelper.create({
     getData: async function (payload) {
 				let self = this;
 				var queryParams = '/' + payload.config.key +
-                          '/' + encodeURIComponent("xml") +
-                          '/' + encodeURIComponent("realtimeStationArrival") +
+                          '/xml/realtimeStationArrival' +
                           '/' + payload.config.start_index +
                           '/' + payload.config.end_index +
                           '/' + encodeURIComponent(payload.config.statnNm);
