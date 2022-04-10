@@ -10,12 +10,14 @@ module.exports = NodeHelper.create({
   socketNotificationReceived: function (notification, payload) {
     switch (notification) {
       case "GET_SUBWAY_DATA":
-        this.getData(payload);
+        let self = this;
+        self.getData(payload);
         break;
     }
   },
 
   getData: async function (payload) {
+    let self = this;
     var queryParams =
       "/" + payload.config.key +
       "/xml/realtimeStationArrival" +
@@ -32,9 +34,9 @@ module.exports = NodeHelper.create({
           var data = JSON.parse(result).realtimeStationArrival;
           if (data.hasOwnProperty("row")) {
             var realtimeArrivalList = data.row;
-            this.sendSocketNotification("SUBWAY_DATA", realtimeArrivalList);
+            self.sendSocketNotification("SUBWAY_DATA", realtimeArrivalList);
           } else {
-            this.sendSocketNotification("SUBWAY_DATA_ERROR", data);
+            self.sendSocketNotification("SUBWAY_DATA_ERROR", data);
           }
         }
       });
