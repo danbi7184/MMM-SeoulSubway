@@ -50,13 +50,14 @@ Module.register("MMM-SeoulSubway", {
 
                 // 상하행선 구분
                 var updnLine = document.createElement("td");
+                updnLine.className = "white_txt";
                 updnLine.innerText = subway.updnLine._text;
                 row.appendChild(updnLine);
 
                 // 전역 진입, 전역 도착 혹은 몇분 후 도착
                 var arvlMsg2 = document.createElement("td");
                 arvlMsg2.className = "arriving";
-                arvlMsg2.innerText = subway.arvlMsg2._text;
+                arvlMsg2.innerHTML= subway.arvlMsg2._text + "입니다";
                 row.appendChild(arvlMsg2);
               }
             }
