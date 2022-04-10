@@ -11,7 +11,8 @@
     "url": "git+https://github.com/danbi7184/MMM-SeoulSubway.git"
   },
   "keywords": [
-    "MagicMirror"
+    "Magic",
+    "Mirror"
   ],
   "author": "scheduler",
   "license": "MIT",
@@ -20,10 +21,6 @@
   },
   "homepage": "https://github.com/danbi7184/MMM-SeoulSubway#readme",
   "dependencies": {
-    "getdata": "^1.0.4",
-    "nodehelper": "^0.0.12",
-    "notification": "^0.0.6",
-    "payload": "^0.15.6",
     "request": "^2.88.2",
     "xml-js": "^1.6.11"
   }
