@@ -18,16 +18,16 @@ module.exports = NodeHelper.create({
 
   getData: async function (payload) {
     let self = this;
-    /*var queryParams =
+    var queryParams =
       "/" + payload.config.key +
       "/xml/realtimeStationArrival" +
       "/" + payload.config.startIndex +
       "/" + payload.config.endIndex +
       "/" + encodeURIComponent(payload.config.statnNm);
-    var url = payload.config.sample + queryParams;*/
+    var url = payload.config.sample + queryParams;
     request({
-        url: "http://swopenapi.seoul.go.kr/api/subway/61645a586764616e36364151526e66/xml/realtimeStationArrival/0/1/%EC%82%AC%EB%8B%B9",
-        method: "GET",
+        url: url,
+        method: "GET"
       }, function (error, response, body) {
         if (!error && response.statusCode === 200) {
           var result = convert.xml2json(body, { compact: true, spaces: 4 });
