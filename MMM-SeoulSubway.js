@@ -73,7 +73,7 @@ Module.register("MMM-SeoulSubway", {
                 "config": this.config,
                 "identifier": this.identifier
             }
-        );
+        )
     },
 
 	notificationReceived: function(notification, payload, sender){
