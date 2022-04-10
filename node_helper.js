@@ -28,15 +28,13 @@ module.exports = NodeHelper.create({
             url: url,
             method: 'GET',
         }, function (error, response, body) {
-            if(!error && (response && response.statusCode) === 200){
+            if(!error){
                 var result = convert.xml2json(body, { compact: true, spaces: 4 });
                 var data = JSON.parse(result).realtimeStationArrival;
                 if(data.hasOwnProperty("row")) {
                     var realtimeArrivalList = data.row;
                     self.sendSocketNotification("SUBWAY_DATA", realtimeArrivalList);
-                } else {
-                    self.sendSocketNotification("SUBWAY_DATA_ERROR", data);
-                }
+                } 
             }
         });
     },
