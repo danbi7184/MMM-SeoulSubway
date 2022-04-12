@@ -36,27 +36,32 @@ Module.register("MMM-SeoulSubway", {
     var subwayTable = document.createElement("table");
     subwayTable.className = "small";
     var subway = this.subwayInfo;
-    if (subway.statnNm._text == this.config.statnNm) {
-      var tableRow = document.createElement("tr");
-      tableRow.className = "title bright";
-      subwayTable.appendChild(tableRow);
+    var RowArr = ['Row1', 'Row2'];
+    var updnLineArr = ['updnLine1', 'updnLine2'];
+    for(var i=0; i<2; i++)
+    {
+      if (subway[i].statnNm._text == this.config.statnNm) {
+        RowArr[i] = document.createElement("tr");
+        RowArr[i].className = "title bright";
+        subwayTable.appendChild(RowArr[i]);
 
-      // 상하행선 구분
-      var updnLine = document.createElement("td");
-      updnLine.innerHTML = subway.updnLine._text;
-      tableRow.appendChild(updnLine);
+        // 상하행선 구분
+        updnLineArr[i] = document.createElement("td");
+        updnLineArr[i].innerHTML = subway.updnLine._text;
+        RowArr[i].appendChild(updnLineArr[i]);
 
-      // 도착지 방면 (성수행-구로디지털단지방향)
-      var trainLineNm = document.createElement("td");
-      trainLineNm.className = "trainLine";
-      trainLineNm.innerHTML = subway.trainLineNm._text;
-      tableRow.appendChild(trainLineNm);
+        // 도착지 방면 (성수행-구로디지털단지방향)
+        //var trainLineNm = document.createElement("td");
+        //trainLineNm.className = "trainLine";
+        //trainLineNm.innerHTML = subway.trainLineNm._text;
+        //tableRow.appendChild(trainLineNm);
 
-      // 전역 진입, 전역 도착 혹은 몇분 후 도착
-      var arvlMsg2 = document.createElement("td");
-      arvlMsg2.className = "arriving";
-      arvlMsg2.innerHTML = subway.arvlMsg2._text;
-      tableRow.appendChild(arvlMsg2);
+        // 전역 진입, 전역 도착 혹은 몇분 후 도착
+        //var arvlMsg2 = document.createElement("td");
+      //  arvlMsg2.className = "arriving";
+       // arvlMsg2.innerHTML = subway.arvlMsg2._text;
+      // tableRow.appendChild(arvlMsg2);
+      }
     }
     wrapper.appendChild(subwayTable);
     return wrapper;
