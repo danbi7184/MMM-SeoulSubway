@@ -35,28 +35,32 @@ Module.register("MMM-SeoulSubway", {
     }
     var subwayTable = document.createElement("table");
     subwayTable.className = "small";
-    var subway = this.subwayInfo;
-    if (subway.statnNm._text == this.config.statnNm) {
-      var tableRow = document.createElement("tr");
-      tableRow.className = "title bright";
-      subwayTable.appendChild(tableRow);
+    if (this.subwayInfo.length > 0) {
+      for (var t in this.subwayInfo) {
+        var subway = this.subwayInfo;
+        if (subway.statnNm._text == this.config.statnNm) {
+          var tableRow = document.createElement("tr");
+          tableRow.className = "title bright";
+          subwayTable.appendChild(tableRow);
 
-      // 도착지 방면 (성수행-구로디지털단지방향)
-      var trainLineNm = document.createElement("td");
-      trainLineNm.className = "trainLine";
-      trainLineNm.innerHTML = subway.trainLineNm._text;
-      tableRow.appendChild(trainLineNm);
+          // 도착지 방면 (성수행-구로디지털단지방향)
+          var trainLineNm = document.createElement("td");
+          trainLineNm.className = "trainLine";
+          trainLineNm.innerHTML = subway.trainLineNm._text;
+          tableRow.appendChild(trainLineNm);
 
-      // 상하행선 구분
-      var updnLine = document.createElement("td");
-      updnLine.innerHTML = subway.updnLine._text;
-      tableRow.appendChild(updnLine);
+          // 상하행선 구분
+          var updnLine = document.createElement("td");
+          updnLine.innerHTML = subway.updnLine._text;
+          tableRow.appendChild(updnLine);
 
-      // 전역 진입, 전역 도착 혹은 몇분 후 도착
-      var arvlMsg2 = document.createElement("td");
-      arvlMsg2.className = "arriving";
-      arvlMsg2.innerHTML = subway.arvlMsg2._text;
-      tableRow.appendChild(arvlMsg2);
+          // 전역 진입, 전역 도착 혹은 몇분 후 도착
+          var arvlMsg2 = document.createElement("td");
+          arvlMsg2.className = "arriving";
+          arvlMsg2.innerHTML = subway.arvlMsg2._text;
+          tableRow.appendChild(arvlMsg2);
+        }
+      }
     }
     wrapper.appendChild(subwayTable);
     return wrapper;
