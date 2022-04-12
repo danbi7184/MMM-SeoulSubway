@@ -1,3 +1,59 @@
-.arriving {
+.important {
 	color: #ff0000;
+}
+
+.line1 {
+	color: #263C96; 
+}
+.line2 {
+	color: #3CB44A;
+}
+.line3 {
+	color: #FF7300;
+}
+.line4 {
+	color: #2C9EDE;
+}
+.line5 {
+	color: #8936E0;
+}
+.line6 {
+	color: #B5500B;
+}
+.line7 {
+	color: #69726F;
+}
+.line8 {
+	color: #E51E6F;
+}
+.line9 {
+	color: #CEA83A;
+}
+/* 경의중앙선 */
+.Gyeongui-Jungang_Line {
+	color: #7CC4A5;
+}
+/* 공항철도 */
+.Airport-Railroad-Express {
+	color: #73B6E4;
+}
+/* 경춘선 */
+.Gyeongchun_Line{
+	color: #08AF7B;
+}
+/* 수인분당선 */
+.Suin-Bundang_Line{
+	color: #FFCE33;
+}
+/* 신분당선 */
+.Shinbundang_Line {
+	color: #A71E31;
+}
+/* 자기부상철도 */
+.Incheon-Airport-Maglev_Line{
+	color: #FF9D5A;
+}
+/* 우이신설선 */
+.Ui-Sinseol_Line{
+	color: #C6C100;
 }
