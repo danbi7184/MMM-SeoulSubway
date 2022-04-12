@@ -41,16 +41,16 @@ Module.register("MMM-SeoulSubway", {
       tableRow.className = "title bright";
       subwayTable.appendChild(tableRow);
 
+      // 상하행선 구분
+      var updnLine = document.createElement("td");
+      updnLine.innerHTML = subway.updnLine._text;
+      tableRow.appendChild(updnLine);
+
       // 도착지 방면 (성수행-구로디지털단지방향)
       var trainLineNm = document.createElement("td");
       trainLineNm.className = "trainLine";
       trainLineNm.innerHTML = subway.trainLineNm._text;
       tableRow.appendChild(trainLineNm);
-
-      // 상하행선 구분
-      var updnLine = document.createElement("td");
-      updnLine.innerHTML = subway.updnLine._text;
-      tableRow.appendChild(updnLine);
 
       // 전역 진입, 전역 도착 혹은 몇분 후 도착
       var arvlMsg2 = document.createElement("td");
