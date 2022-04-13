@@ -4,9 +4,10 @@ Module.register("MMM-SeoulSubway", {
     sample: "http://swopenapi.seoul.go.kr/api/subway",
     key: "",
     startIndex: 0,
-    endIndex: 1,
-    statnNm: "사당",
-    header: "사당역 지하철 도착 정보",
+    endIndex: 15,
+    statnNm: "", // 역 이름
+    header: "지하철 도착 정보",
+    direction: "", // 방면
     updateInterval: 60000,
   },
 
@@ -36,27 +37,48 @@ Module.register("MMM-SeoulSubway", {
     var subwayTable = document.createElement("table");
     subwayTable.className = "small";
     var subway = this.subwayInfo;
-    if (subway.statnNm._text == this.config.statnNm) {
-      var tableRow = document.createElement("tr");
-      tableRow.className = "title bright";
-      subwayTable.appendChild(tableRow);
 
-      // 도착지 방면 (성수행-구로디지털단지방향)
-      var trainLineNm = document.createElement("td");
-      trainLineNm.className = "trainLine";
-      trainLineNm.innerHTML = subway.trainLineNm._text;
-      tableRow.appendChild(trainLineNm);
+    var RowArr = new Array();
+    var updnLineArr = new Array();
+    var trainLineNmArr = new Array();
+    for (var k = 0; i < 15; k++) {
+      RowArr[k] = 'row' + k;
+      updnLineArr[k] = 'updnLine' + k;
+      trainLineNmArr[k] = 'trainLineNm' + k;
+    }
 
-      // 상하행선 구분
-      var updnLine = document.createElement("td");
-      updnLine.innerHTML = subway.updnLine._text;
-      tableRow.appendChild(updnLine);
+    for (var i = 0; i < subway.length; i++) {
+      if (subway[i].trainlineNm._text.includes(this.config.direction)) {
+        RowArr[i] = document.createElement("tr");
+        RowArr[i].className = "title bright";
+        subwayTable.appendChild(RowArr[i]);
 
-      // 전역 진입, 전역 도착 혹은 몇분 후 도착
-      var arvlMsg2 = document.createElement("td");
-      arvlMsg2.className = "arriving";
-      arvlMsg2.innerHTML = subway.arvlMsg2._text;
-      tableRow.appendChild(arvlMsg2);
+        // 상하행선, 내선외선 구분
+        updnLineArr[i] = document.createElement("td");
+        updnLineArr[i].innerHTML = subway[i].updnLine._text;
+        RowArr[i].appendChild(updnLineArr[i]);
+
+        // 도착지 방면 (성수행, 강남행)
+        trainLineNm[i] = document.createElement("td");
+        trainLineNm[i].className = "trainLine";
+        if (subway[i].statnNm._text.includes("행")) {
+          var SubwayDirection = subway[i].trainLineNm._text.split(" ");
+          trainLineNm[i].innerHTML = SubwayDirection[0];
+          RowArr[i].appendChild(trainLineNm[i]);
+        } else {
+          var pos1 = subway[i].trainLineNm._text.indexOf("행");
+          var SubwayDirection = subway[i].trainLineNm._text.substr(0, pos1 + 1);
+          trainLineNm[i].innerHTML = SubwayDirection;
+          RowArr[i].appendChild(trainLineNm[i]);
+        }
+
+
+        // 전역 진입, 전역 도착 혹은 몇분 후 도착
+        //var arvlMsg2 = document.createElement("td");
+        // arvlMsg2.className = "arriving";
+        // arvlMsg2.innerHTML = subway.arvlMsg2._text;
+        // tableRow.appendChild(arvlMsg2);
+      }
     }
     wrapper.appendChild(subwayTable);
     return wrapper;
