@@ -4,7 +4,7 @@ Module.register("MMM-SeoulSubway", {
     sample: "http://swopenapi.seoul.go.kr/api/subway",
     key: "",
     startIndex: 0,
-    endIndex: 20,
+    endIndex: 15,
     statnNm: "", // 역 이름
     header: "지하철 도착 정보",
     direction: "", // 방면
@@ -41,13 +41,13 @@ Module.register("MMM-SeoulSubway", {
     var RowArr = new Array();
     var updnLineArr = new Array();
     var trainLineNmArr = new Array();
-    for (var k = 0; i < 20; k++) {
+    for (var k = 0; i < 15; k++) {
       RowArr[k] = 'row' + k;
       updnLineArr[k] = 'updnLine' + k;
       trainLineNmArr[k] = 'trainLineNm' + k;
     }
 
-    for (var i = 0; i < 20; i++) {
+    for (var i = 0; i < subway.length; i++) {
       if (subway[i].trainlineNm._text.includes(this.config.direction)) {
         RowArr[i] = document.createElement("tr");
         RowArr[i].className = "title bright";
