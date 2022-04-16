@@ -41,12 +41,14 @@ Module.register("MMM-SeoulSubway", {
     var RowArr = new Array();
     var updnLineArr = new Array();
     var trainLineNmArr = new Array();
+    var arvlMsgArr = new Array();
 
     for(var i=0; i<subway.length; i++) {
       if (subway[i].trainLineNm._text.includes(this.config.direction)) {
         RowArr[i] = 'row' + i;
         updnLineArr[i] = 'updnLine' + i;
         trainLineNmArr[i] = 'trainLineNm' + i;
+        arvlMsgArr[i] = 'arvlMsgArr' + i;
 
         RowArr[i] = document.createElement("tr");
         RowArr[i].className = "title bright";
@@ -63,27 +65,57 @@ Module.register("MMM-SeoulSubway", {
         if (subway[i].statnNm._text.includes("행")) {
           var SubwayDirection = subway[i].trainLineNm._text.split(" ");
           
-          // 열차 종류 (급행 / ITX)
+          // 열차 종류 (급행 / ITX) / 막차 표시
           if (subway[i].trainLineNm._text.includes("급행"))
           {
             trainLineNmArr[i].innerHTML = SubwayDirection[0] + " (급행)";
-          } else {
+          } else if (subway[i].trainLineNm._text.includes("막차")) {
+            trainLineNmArr[i].innerHTML = SubwayDirection[0] + " (막차)";
+          }
+          else {
             trainLineNmArr[i].innerHTML = SubwayDirection[0];
           }
+
           RowArr[i].appendChild(trainLineNmArr[i]);
         } else {
           var pos1 = subway[i].trainLineNm._text.indexOf("행");
           var SubwayDirection = subway[i].trainLineNm._text.substr(0, pos1 + 1);
 
-          // 열차 종류 (급행 / ITX)
+          // 열차 종류 (급행 / ITX) / 막차 표시
           if (subway[i].trainLineNm._text.includes("급행"))
           {
             trainLineNmArr[i].innerHTML = SubwayDirection + " (급행)";
-          } else {
+          } else if (subway[i].trainLineNm._text.includes("막차")) {
+            trainLineNmArr[i].innerHTML = SubwayDirection + " (막차)";
+          } 
+          else {
             trainLineNmArr[i].innerHTML = SubwayDirection;
           }
+          
           RowArr[i].appendChild(trainLineNmArr[i]);
         }
+
+        // 열차 도착 시간 및 현재 위치 표시
+        arvlMsgArr[i] = document.createElement("td");
+        arvlMsgArr[i].className = "arvlMsg"
+        if (subway[i].arvlCd == "0") {
+          arvlMsgArr[i].innerHTML = "진입";
+        } else if (subway[i].arvlCd == "1") {
+          arvlMsgArr[i].innerHTML = "도착";
+        } else if (subway[i].arvlCd == "2") {
+          arvlMsgArr[i].innerHTML = "출발";
+        } else if (subway[i].arvlCd == "3") {
+          arvlMsgArr[i].innerHTML = "전역 출발";
+        } else if (subway[i].arvlCd == "4") {
+          arvlMsgArr[i].innerHTML = "전역 진입";
+        } else if (subway[i].arvlCd == "5") {
+          arvlMsgArr[i].innerHTML = "전역 도착";
+        } else {
+          var barvlDt = parseInt(subway[i].barvlDt._text)/60;
+          arvlMsgArr[i].innerHTML = subway[i].arvlMsg3._text + "(" + barvlDt + "분)";
+        }
+
+        RowArr[i].appendChild(arvlMsgArr[i]);
       }
     }
     wrapper.appendChild(subwayTable);
