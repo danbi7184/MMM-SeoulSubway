@@ -17,9 +17,9 @@ Module.register("MMM-SeoulSubway", {
 
   getHeader: function () {
     if (this.subwayInfo) {
-      return "<i class='fa fa-fw fa-bus'></i> " + this.config.header;
+      return "<i class='fa fa-fw fa-subway'></i> " + this.config.header;
     }
-    return "<i class='fa fa-fw fa-bus'></i> 지하철 정보";
+    return "<i class='fa fa-fw fa-subway'></i> 지하철 정보";
   },
 
   start: function () {
