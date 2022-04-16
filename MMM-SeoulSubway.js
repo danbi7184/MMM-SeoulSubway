@@ -41,16 +41,12 @@ Module.register("MMM-SeoulSubway", {
     var RowArr = new Array();
     var updnLineArr = new Array();
     var trainLineNmArr = new Array();
-    var btrainSttusArr = new Array();
-    var lastTrainArr = new Array();
 
     for(var i=0; i<subway.length; i++) {
       if (subway[i].trainLineNm._text.includes(this.config.direction)) {
         RowArr[i] = 'row' + i;
         updnLineArr[i] = 'updnLine' + i;
         trainLineNmArr[i] = 'trainLineNm' + i;
-        btrainSttusArr[i] = 'btrainSttus' + i;
-        lastTrainArr[i] = 'lastTrainArr' + i;
 
         RowArr[i] = document.createElement("tr");
         RowArr[i].className = "title bright";
@@ -66,29 +62,19 @@ Module.register("MMM-SeoulSubway", {
         trainLineNmArr[i].className = "trainLine";
         if (subway[i].statnNm._text.includes("행")) {
           var SubwayDirection = subway[i].trainLineNm._text.split(" ");
-          trainLineNmArr[i].innerHTML = SubwayDirection[0];
+          // 열차 종류 (급행 / ITX)
+          if (subway[i].trainLineNm._text.includes("급행"))
+          {
+            trainLineNmArr[i].innerHTML = SubwayDirection[0] + " (급행)";
+          } else {
+            trainLineNmArr[i].innerHTML = SubwayDirection[0];
+          }
           RowArr[i].appendChild(trainLineNmArr[i]);
         } else {
           var pos1 = subway[i].trainLineNm._text.indexOf("행");
           var SubwayDirection = subway[i].trainLineNm._text.substr(0, pos1 + 1);
           trainLineNmArr[i].innerHTML = SubwayDirection;
           RowArr[i].appendChild(trainLineNmArr[i]);
-        }
-
-        // 열차 종류 (급행 / ITX)
-        if (subway[i].trainLineNm._text.includes("급행"))
-        {
-          btrainSttusArr[i] = document.createElement("td");
-          btrainSttusArr[i].innerHTML = "(급행)";
-          RowArr[i].appendChild(btrainSttusArr[i]);
-        }
-
-        // 막차 표시
-        if (subway[i].trainLineNm._text.includes("막차"))
-        {
-          lastTrainArr[i] = document.createElement("td");
-          lastTrainArr[i].innerHTML = "(막차)";
-          RowArr[i].appendChild(lastTrainArr[i]);
         }
       }
     }
