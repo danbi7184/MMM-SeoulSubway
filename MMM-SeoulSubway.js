@@ -56,9 +56,40 @@ Module.register("MMM-SeoulSubway", {
 
         // 상하행선, 내선외선 구분
         updnLineArr[i] = document.createElement("td");
-        if(subway[i].subwayId._text == "1002") {
+        // 글씨 색을 각 호선에 맞는 색으로 설정
+        if(subway[i].subwayId._text == "1001") {
+          updnLineArr[i].className = "line1";
+        } else if(subway[i].subwayId._text == "1002") {
           updnLineArr[i].className = "line2";
-        }
+        } else if(subway[i].subwayId._text == "1003") {
+          updnLineArr[i].className = "line3";
+        } else if(subway[i].subwayId._text == "1004") {
+          updnLineArr[i].className = "line4";
+        } else if(subway[i].subwayId._text == "1005") {
+          updnLineArr[i].className = "line5";
+        } else if(subway[i].subwayId._text == "1006") {
+          updnLineArr[i].className = "line6";
+        } else if(subway[i].subwayId._text == "1007") {
+          updnLineArr[i].className = "line7";
+        } else if(subway[i].subwayId._text == "1008") {
+          updnLineArr[i].className = "line8";
+        } else if(subway[i].subwayId._text == "1009") {
+          updnLineArr[i].className = "line9";
+        } else if(subway[i].subwayId._text == "1063") {
+          updnLineArr[i].className = "Gyeongui-Jungang_Line";
+        } else if(subway[i].subwayId._text == "1065") {
+          updnLineArr[i].className = "Airport-Railroad-Express";
+        } else if(subway[i].subwayId._text == "1067") {
+          updnLineArr[i].className = "Gyeongchun_Line";
+        } else if(subway[i].subwayId._text == "1075") {
+          updnLineArr[i].className = "Suin-Bundang_Line";
+        } else if(subway[i].subwayId._text == "1077") {
+          updnLineArr[i].className = "Shinbundang_Line";
+        } else if(subway[i].subwayId._text == "1091") {
+          updnLineArr[i].className = "Incheon-Airport-Maglev_Line";
+        } else if(subway[i].subwayId._text == "1092") {
+          updnLineArr[i].className = "Ui-Sinseol_Line";
+        } 
         updnLineArr[i].innerHTML = subway[i].updnLine._text;
         RowArr[i].appendChild(updnLineArr[i]);
 
