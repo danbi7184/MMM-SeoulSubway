@@ -70,7 +70,6 @@ Module.register("MMM-SeoulSubway", {
           } else {
             trainLineNmArr[i].innerHTML = SubwayDirection[0];
           }
-
           RowArr[i].appendChild(trainLineNmArr[i]);
         } else {
           var pos1 = subway[i].trainLineNm._text.indexOf("행");
@@ -79,11 +78,10 @@ Module.register("MMM-SeoulSubway", {
           // 열차 종류 (급행 / ITX)
           if (subway[i].trainLineNm._text.includes("급행"))
           {
-            trainLineNmArr[i].innerHTML = SubwayDirection[0] + " (급행)";
+            trainLineNmArr[i].innerHTML = SubwayDirection + " (급행)";
           } else {
-            trainLineNmArr[i].innerHTML = SubwayDirection[0];
+            trainLineNmArr[i].innerHTML = SubwayDirection;
           }
-          
           RowArr[i].appendChild(trainLineNmArr[i]);
         }
       }
