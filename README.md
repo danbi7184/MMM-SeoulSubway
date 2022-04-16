@@ -47,7 +47,6 @@ To use this module, add it to the modules array in the `config/config.js` file:
 The following properties can be configured:
 
 <table width="100%">
-	<!-- why, markdown... -->
 	<thead>
 		<tr>
 			<th>Option</th>
@@ -57,7 +56,44 @@ The following properties can be configured:
 	<tbody>
 		<tr>
 			<td><code>sample</code></td>
-			<td>Seoul Subway API's base url
+			<td>Seoul Subway API's Base URL
+			</td>
+		</tr>
+		<tr>
+			<td><code>key</code></td>
+			<td>To Use this module, You have to Get API Key from this URL.
+				<br><a>https://data.seoul.go.kr/dataList/OA-12764/F/1/datasetView.do</a>
+			</td>
+		</tr>
+		<tr>
+			<td><code>startIndex</code></td>
+			<td>Start Number of Paging
+			</td>
+		</tr>
+		<tr>
+			<td><code>endIndex</code></td>
+			<td>End Number of Paging
+			</td>
+		</tr>
+		<tr>
+			<td><code>statnNm</code></td>
+			<td>the Station Name You want to see
+			</td>
+		</tr>
+		<tr>
+			<td><code>header</code></td>
+			<td>Title information
+			</td>
+		</tr>
+		<tr>
+			<td><code>direction</code></td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td><code>updateInterval</code></td>
+			<td>Update Interval
+				<br>default: 60000 / 1 minute
 			</td>
 		</tr>
 	</tbody>
