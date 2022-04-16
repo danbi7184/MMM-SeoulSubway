@@ -111,8 +111,8 @@ Module.register("MMM-SeoulSubway", {
         } else if (subway[i].arvlCd == "5") {
           arvlMsgArr[i].innerHTML = "전역 도착";
         } else {
-          var barvlDt = parseInt(subway[i].barvlDt._text)/60;
-          arvlMsgArr[i].innerHTML = subway[i].arvlMsg3._text + "(" + barvlDt + "분)";
+          var barvlDt = Math.floor(parseInt(subway[i].barvlDt._text)/60);
+          arvlMsgArr[i].innerHTML = subway[i].arvlMsg3._text + " (" + barvlDt + "분)";
         }
 
         RowArr[i].appendChild(arvlMsgArr[i]);
