@@ -15,5 +15,12 @@ The MMM-SeoulSubway is a module designed to display the real-time subway arrival
 ##### 3) statnNm: "사당", direction: ""
 ![example3](https://user-images.githubusercontent.com/97887583/163681455-a197c5dd-3e0a-44d1-89eb-b72c90fb1e4c.PNG)
 
+## Using the module
+Git clone this repository into modules directory of MagicMirror and change directory then run npm install. 
+```
+git clone https://github.com/danbi7184/MMM-SeoulSubway.git
+cd MMM-SeoulSubway
+npm install
+```
 
-
+To use this module, add it to the modules array in the `config/config.js` file:
