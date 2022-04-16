@@ -62,13 +62,13 @@ Module.register("MMM-SeoulSubway", {
         trainLineNm[i] = document.createElement("td");
         trainLineNm[i].className = "trainLine";
         if (subway[i].statnNm._text.includes("행")) {
-          var SubwayDirection = subway[i].trainLineNm._text.split(" ");
-          trainLineNm[i].innerHTML = SubwayDirection[0];
+          var SubwayDirection1 = subway[i].trainLineNm._text.split(" ");
+          trainLineNm[i].innerHTML = SubwayDirection1[0];
           RowArr[i].appendChild(trainLineNm[i]);
         } else {
           var pos1 = subway[i].trainLineNm._text.indexOf("행");
-          var SubwayDirection = subway[i].trainLineNm._text.substr(0, pos1 + 1);
-          trainLineNm[i].innerHTML = SubwayDirection;
+          var SubwayDirection2 = subway[i].trainLineNm._text.substr(0, pos1 + 1);
+          trainLineNm[i].innerHTML = SubwayDirection2;
           RowArr[i].appendChild(trainLineNm[i]);
         }
 
