@@ -48,7 +48,7 @@ Module.register("MMM-SeoulSubway", {
     }
 
     for(var i=0; i<subway.length; i++) {
-      if (subway[i].trainlineNm._text.includes(this.config.direction)) {
+      if (subway[i].trainLineNm._text.includes(this.config.direction)) {
         RowArr[i] = document.createElement("tr");
         RowArr[i].className = "title bright";
         subwayTable.appendChild(RowArr[i]);
