@@ -78,7 +78,7 @@ The following properties can be configured:
 		</tr>
 		<tr>
 			<td><code>statnNm</code></td>
-			<td>the Station Name You want to see
+			<td>the Station Name You Want to See
 			</td>
 		</tr>
 		<tr>
@@ -88,7 +88,7 @@ The following properties can be configured:
 		</tr>
 		<tr>
 			<td><code>direction</code></td>
-			<td>
+			<td>the Station Name You Want to Go (Direction/방면)
 			</td>
 		</tr>
 		<tr>
