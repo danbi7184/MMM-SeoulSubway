@@ -62,7 +62,8 @@ The following properties can be configured:
 		<tr>
 			<td><code>key</code></td>
 			<td>To Use this module, You have to Get API Key from this URL.
-				<br><a>https://data.seoul.go.kr/dataList/OA-12764/F/1/datasetView.do</a>
+				<br><a href="https://data.seoul.go.kr/dataList/OA-12764/F/1/datasetView.do">
+				https://data.seoul.go.kr/dataList/OA-12764/F/1/datasetView.do</a>
 			</td>
 		</tr>
 		<tr>
