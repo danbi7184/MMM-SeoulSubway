@@ -80,6 +80,7 @@ Module.register("MMM-SeoulSubway", {
         {
           btrainSttusArr[i] = document.createElement("td");
           btrainSttusArr[i].innerHTML = "(급행)";
+          RowArr[i].appendChild(btrainSttusArr[i]);
         }
 
         // 막차 표시
@@ -87,6 +88,7 @@ Module.register("MMM-SeoulSubway", {
         {
           lastTrainArr[i] = document.createElement("td");
           lastTrainArr[i].innerHTML = "(막차)";
+          RowArr[i].appendChild(lastTrainArr[i]);
         }
       }
     }
