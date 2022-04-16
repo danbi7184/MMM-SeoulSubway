@@ -44,7 +44,7 @@ Module.register("MMM-SeoulSubway", {
     var arvlMsgArr = new Array();
 
     for(var i=0; i<subway.length; i++) {
-      if (subway[i].trainLineNm._text.includes(this.config.direction)) {
+      if (subway[i].trainLineNm._text.includes(this.config.direction) || !this.config.direction) {
         RowArr[i] = 'row' + i;
         updnLineArr[i] = 'updnLine' + i;
         trainLineNmArr[i] = 'trainLineNm' + i;
