@@ -26,19 +26,19 @@ npm install
 To use this module, add it to the modules array in the `config/config.js` file:
 ````javascript
 {
-			module: "MMM-SeoulSubway",
-			position: "top_left",
-			config: {
-				sample: "http://swopenapi.seoul.go.kr/api/subway",
-				key: "", // Your API KEY
-				startIndex: 0,
-				endIndex: 15,
-				statnNm: "", // Input the Station Name You Want to See
-				header: "역 지하철 정보", // Input the Station Name You Want to See
-				direction: "", // Input the Station Name You Want to Go (방면)
-				updateInterval: 60000
+		module: "MMM-SeoulSubway",
+		position: "top_left",
+		config: {
+			sample: "http://swopenapi.seoul.go.kr/api/subway",
+			key: "", // Your API KEY
+			startIndex: 0,
+			endIndex: 15,
+			statnNm: "", // Input the Station Name You Want to See
+			header: "역 지하철 정보", // Input the Station Name You Want to See
+			direction: "", // Input the Station Name You Want to Go (방면)
+			updateInterval: 60000
 
-			}
-		},
+		}
+},
 
 ````
