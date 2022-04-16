@@ -56,6 +56,9 @@ Module.register("MMM-SeoulSubway", {
 
         // 상하행선, 내선외선 구분
         updnLineArr[i] = document.createElement("td");
+        if(subway[i].subwayId._text == "1002") {
+          updnLineArr[i].className = "line2";
+        }
         updnLineArr[i].innerHTML = subway[i].updnLine._text;
         RowArr[i].appendChild(updnLineArr[i]);
 
@@ -66,8 +69,7 @@ Module.register("MMM-SeoulSubway", {
           var SubwayDirection = subway[i].trainLineNm._text.split(" ");
           
           // 열차 종류 (급행 / ITX) / 막차 표시
-          if (subway[i].trainLineNm._text.includes("급행"))
-          {
+          if (subway[i].trainLineNm._text.includes("급행")) {
             trainLineNmArr[i].innerHTML = SubwayDirection[0] + " (급행)";
           } else if (subway[i].trainLineNm._text.includes("막차")) {
             trainLineNmArr[i].innerHTML = SubwayDirection[0] + " (막차)";
@@ -82,8 +84,7 @@ Module.register("MMM-SeoulSubway", {
           var SubwayDirection = subway[i].trainLineNm._text.substr(0, pos1 + 1);
 
           // 열차 종류 (급행 / ITX) / 막차 표시
-          if (subway[i].trainLineNm._text.includes("급행"))
-          {
+          if (subway[i].trainLineNm._text.includes("급행")) {
             trainLineNmArr[i].innerHTML = SubwayDirection + " (급행)";
           } else if (subway[i].trainLineNm._text.includes("막차")) {
             trainLineNmArr[i].innerHTML = SubwayDirection + " (막차)";
@@ -98,17 +99,17 @@ Module.register("MMM-SeoulSubway", {
         // 열차 도착 시간 및 현재 위치 표시
         arvlMsgArr[i] = document.createElement("td");
         arvlMsgArr[i].className = "arvlMsg"
-        if (subway[i].arvlCd == "0") {
+        if (subway[i].arvlCd._text == "0") {
           arvlMsgArr[i].innerHTML = "진입";
-        } else if (subway[i].arvlCd == "1") {
+        } else if (subway[i].arvlCd._text == "1") {
           arvlMsgArr[i].innerHTML = "도착";
-        } else if (subway[i].arvlCd == "2") {
+        } else if (subway[i].arvlCd._text == "2") {
           arvlMsgArr[i].innerHTML = "출발";
-        } else if (subway[i].arvlCd == "3") {
+        } else if (subway[i].arvlCd._text == "3") {
           arvlMsgArr[i].innerHTML = "전역 출발";
-        } else if (subway[i].arvlCd == "4") {
+        } else if (subway[i].arvlCd._text == "4") {
           arvlMsgArr[i].innerHTML = "전역 진입";
-        } else if (subway[i].arvlCd == "5") {
+        } else if (subway[i].arvlCd._text == "5") {
           arvlMsgArr[i].innerHTML = "전역 도착";
         } else {
           var barvlDt = Math.floor(parseInt(subway[i].barvlDt._text)/60);
