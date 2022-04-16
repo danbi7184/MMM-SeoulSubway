@@ -144,7 +144,11 @@ Module.register("MMM-SeoulSubway", {
           arvlMsgArr[i].innerHTML = "전역 도착";
         } else {
           var barvlDt = Math.floor(parseInt(subway[i].barvlDt._text)/60);
-          arvlMsgArr[i].innerHTML = subway[i].arvlMsg3._text + " (" + barvlDt + "분)";
+          if (barvlDt == 0) {
+            arvlMsgArr[i].innerHTML = subway[i].arvlMsg3._text;
+          } else {
+            arvlMsgArr[i].innerHTML = subway[i].arvlMsg3._text + " (" + barvlDt + "분)";
+          }
         }
 
         RowArr[i].appendChild(arvlMsgArr[i]);
