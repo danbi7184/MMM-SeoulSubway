@@ -61,7 +61,7 @@ The following properties can be configured:
 		</tr>
 		<tr>
 			<td><code>key</code></td>
-			<td>To Use this module, You have to Get API Key from this URL.
+			<td>To Use this Module, You have to Get API Key from this URL.
 				<br><a href="https://data.seoul.go.kr/dataList/OA-12764/F/1/datasetView.do">
 				https://data.seoul.go.kr/dataList/OA-12764/F/1/datasetView.do</a>
 			</td>
@@ -83,12 +83,13 @@ The following properties can be configured:
 		</tr>
 		<tr>
 			<td><code>header</code></td>
-			<td>Title information
+			<td>Title Information
 			</td>
 		</tr>
 		<tr>
 			<td><code>direction</code></td>
 			<td>the Station Name You Want to Go (Direction/방면)
+				<br>This value is <b>OPTIONAL</b>
 			</td>
 		</tr>
 		<tr>
