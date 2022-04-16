@@ -40,5 +40,25 @@ To use this module, add it to the modules array in the `config/config.js` file:
 
 		}
 },
-
 ````
+
+## Configuraion options
+
+The following properties can be configured:
+
+<table width="100%">
+	<!-- why, markdown... -->
+	<thead>
+		<tr>
+			<th>Option</th>
+			<th width="100%">Description</th>
+		</tr>
+	<thead>
+	<tbody>
+		<tr>
+			<td><code>sample</code></td>
+			<td>Seoul Subway API's base url
+			</td>
+		</tr>
+	</tbody>
+</table>
