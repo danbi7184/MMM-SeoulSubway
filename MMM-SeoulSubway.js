@@ -31,7 +31,6 @@ Module.register("MMM-SeoulSubway", {
 
   getDom: function () {
     var wrapper = document.createElement("div");
-    wrapper.id = 'subway_div';
     if (!this.loaded) {
       return wrapper;
     }
